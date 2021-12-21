@@ -11,6 +11,7 @@ with rasterio.open('cropped1.TIF') as src:
 numpy.seterr(divide='ignore', invalid='ignore')
 
 ndvi = (band_nir.astype(float) - band_red.astype(float)) / (band_nir + band_red)
+print(ndvi)
 
 kwargs = src.meta
 kwargs.update(
